@@ -1,5 +1,6 @@
 package br.com.service.email.servicesendemail.model;
 
+import br.com.service.email.servicesendemail.enums.StatusEmail;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,5 +34,9 @@ public class EmailModel {
 
     // Data de envio do email
     private LocalDateTime sendDateEmail;
+
+    // Status do email anotado para salvar no banco pelo status
+    @Enumerated(EnumType.STRING)
+    private StatusEmail statusEmail;
 
 }
